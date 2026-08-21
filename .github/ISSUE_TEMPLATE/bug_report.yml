@@ -1,0 +1,61 @@
+name: Report a problem
+description: Tell us what went wrong with OpenBackup.
+title: "[Bug]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve OpenBackup.
+
+        Please do not include passwords, links containing access tokens,
+        backup contents, serial numbers, or other private information.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: OpenBackup version
+      placeholder: "For example: 2.1"
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Where does the problem occur?
+      options:
+        - macOS
+        - Android
+        - iPhone / iPad
+        - Website
+    validations:
+      required: true
+
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection method
+      options:
+        - Google Drive
+        - Dropbox
+        - HTTPS server
+        - Not applicable / I do not know
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Tell us what you did just before the problem occurred.
+    validations:
+      required: true
